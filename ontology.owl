@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/sebi#"
+     xml:base="https://w3id.org/sebi"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://w3id.org/sebi">
+        <owl:versionIRI rdf:resource="https://w3id.org/sebi/version/2024-06-04"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/sebi/assess -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/assess">
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:comment>A relationship indicating that an Evidence examines a Feature (e.g. the evidence assess (or examines) the style of the document).</rdfs:comment>
+        <rdfs:label>assess</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/evaluate -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/evaluate">
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>A relationship indicating that an Evidence gives an Evaluation when evaluating a Feature (e.g. the evidence evaluates the **presence** of interpolations).</rdfs:comment>
+        <rdfs:label>evaluate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/hasEvaluation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/hasEvaluation">
+        <owl:inverseOf rdf:resource="https://w3id.org/sebi/hasFeature"/>
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>A relationship indicating the Evaluation associated with a Feature (e.g. the presence of interpolations). Inverse proprty of has feature.</rdfs:comment>
+        <rdfs:label>has evaluation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/hasFeature -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/hasFeature">
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:comment>A relationship indicating the Feature to which an Evaluation is associated (e.g. interpolations are present in the document).</rdfs:comment>
+        <rdfs:label>has feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/intend -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/intend">
+        <owl:inverseOf rdf:resource="https://w3id.org/sebi/intendedTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Document"/>
+        <rdfs:comment>A relationship indicating which document has been created with a certain Intention. Inverse proprty of intend. </rdfs:comment>
+        <rdfs:label>intend</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/intendedTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/intendedTo">
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Document"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>A relationship indicating the Intention with which a document has been created (e.g. for profit purposes).</rdfs:comment>
+        <rdfs:label>intended to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/isAssessedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/isAssessedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/sebi/assess"/>
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:comment>A relationship indicating that a Feature is examined in an Evidence (e.g. the style of the document is assessed (or examined) in the evidence). Inverse property of assess.</rdfs:comment>
+        <rdfs:label>is assessed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/isEvaluatedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/isEvaluatedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/sebi/evaluate"/>
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:comment>A relationship indicating that an Evaluation is given in an Evidence when evaluating a Feature  (e.g. **presence** of interpolations has been evaluated in the evidence). Inverse property of evaluate. </rdfs:comment>
+        <rdfs:label>is evaluated by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/isSupportedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/isSupportedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/sebi/support"/>
+        <rdfs:domain rdf:resource="https://w3id.org/hico#InterpretationAct"/>
+        <rdfs:range rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:comment>A relationship indicating that an Interpretation is supported by an Evidence. Inverse property of support</rdfs:comment>
+        <rdfs:label>is supported by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sebi/support -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sebi/support">
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:range rdf:resource="https://w3id.org/hico#InterpretationAct"/>
+        <rdfs:comment>A relationship indicating that an Evidence supports an Interpretation.</rdfs:comment>
+        <rdfs:label>support</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/sebi/hasEvaluationScore -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sebi/hasEvaluationScore">
+        <rdfs:domain rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The evaluation score given to an Evidence to register its polarity (e.g. score 0 on consistency means inconsistent, score 1 means consintent)</rdfs:comment>
+        <rdfs:label>has evaluation score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/hico#InterpretationAct -->
+
+
+    <owl:Class rdf:about="https://w3id.org/hico#InterpretationAct"/>
+    
+
+
+    <!-- https://w3id.org/sebi/Authentic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Authentic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sebi/Document"/>
+        <rdfs:comment>An authentic document is a document which is believed to be genuine</rdfs:comment>
+        <rdfs:label>Authentic document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Document -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Document">
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Feature"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>A document is a recorded piece of information, typically in written, that serves as device to communicate</rdfs:comment>
+        <rdfs:label>Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Evaluation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Evaluation">
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Evidence"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Feature"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>A specific quality or feature detected in an evidence (e.g. reliability, completeness)</rdfs:comment>
+        <rdfs:label>Evaluation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Evidence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Evidence">
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Feature"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>A piece of evidence or proof used in the investigation</rdfs:comment>
+        <rdfs:label>Evidence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/ExtrinsicFeature -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/ExtrinsicFeature">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:comment>An external characteristic of a document, such as ink or paper</rdfs:comment>
+        <rdfs:label>Extrinsic feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Feature -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Feature">
+        <owl:disjointWith rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>A characteristic or Evaluation of a document on which an evidence is based on (e.g. style, language)</rdfs:comment>
+        <rdfs:label>Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Forgery -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Forgery">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sebi/Document"/>
+        <rdfs:comment>A forgery is a document intentionally created or altered with the intent to deceive or defraud by passing it off as genuine</rdfs:comment>
+        <rdfs:label>Forgery</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Intention -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Intention">
+        <rdfs:comment>An intention is the purpose that led to the creation of a document</rdfs:comment>
+        <rdfs:label>Intention</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/IntrinsicFeature -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/IntrinsicFeature">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:comment>An internal characteristic of a document, such as style or content</rdfs:comment>
+        <rdfs:label>Intrinsic feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/Provenance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/Provenance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sebi/Feature"/>
+        <rdfs:comment>The history of ownership and transmission of a document</rdfs:comment>
+        <rdfs:label>Provenance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sebi/SuspectedForgery -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sebi/SuspectedForgery">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sebi/Document"/>
+        <rdfs:comment>A suspected forgery is a document that is believed to be a result of forgery, but its authenticity has not been confirmed.</rdfs:comment>
+        <rdfs:label>Supected forged document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/sebi/attendibility -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/attendibility">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>The reliability of a document&apos;s content and the trustworthiness of its source.</rdfs:comment>
+        <rdfs:label>attendibility</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/authentication_marks -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/authentication_marks">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>Legal authentication marks or signs on a document that indicate its authenticity.</rdfs:comment>
+        <rdfs:label>authentication marks</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/chronology_and_dating -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/chronology_and_dating">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>The timeline and historical context of a document</rdfs:comment>
+        <rdfs:label>chronology and dating</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/completeness -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/completeness">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>The state of a document having all necessary parts or elements</rdfs:comment>
+        <rdfs:label>completeness</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/consistency -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/consistency">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>The degree to which different parts of a document agree with each other</rdfs:comment>
+        <rdfs:label>consistency</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/content -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/content">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>The actual information or text contained in a document</rdfs:comment>
+        <rdfs:label>content</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/document_provenance -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/document_provenance">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Provenance"/>
+        <rdfs:comment>The documented history of a document&apos;s ownership and transmission</rdfs:comment>
+        <rdfs:label>document provenance</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/format_spacing_signs -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/format_spacing_signs">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>The layout, spacing, and sign usage in a document</rdfs:comment>
+        <rdfs:label>format (spacing, signs)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/handwriting -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/handwriting">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>The style and characteristics of writing in a document</rdfs:comment>
+        <rdfs:label>handwriting</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/historical_context -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/historical_context">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Provenance"/>
+        <rdfs:comment>The historical setting and background of a document</rdfs:comment>
+        <rdfs:label>historical context</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/historical_revisionism -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/historical_revisionism">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>The deliberate alteration or reinterpretation of historical records to reflect a specific agenda, often to legitimize or support a particular viewpoint.</rdfs:comment>
+        <rdfs:label>historical revisionism</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/illustration -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/illustration">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>Visual elements in a document, such as drawings or decorations</rdfs:comment>
+        <rdfs:label>illustration or other graphical device</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/indentation -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/indentation">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>Impressions left on a document from writing or sealing</rdfs:comment>
+        <rdfs:label>indentation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/ink -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/ink">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>The type and composition of ink used in a document</rdfs:comment>
+        <rdfs:label>ink</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/inter_punctuation -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/inter_punctuation">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>The punctuation used between words and sentences</rdfs:comment>
+        <rdfs:label>inter-punctuation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/interpolations -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/interpolations">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>Additional text inserted into a document after its original creation, often indicating tampering.</rdfs:comment>
+        <rdfs:label>interpolations</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/legal_formulas -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/legal_formulas">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>Standard legal phrases or formats in a document</rdfs:comment>
+        <rdfs:label>legal formulas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/list_of_witnesses -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/list_of_witnesses">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Provenance"/>
+        <rdfs:comment>A record of individuals who have seen or authenticated a documents</rdfs:comment>
+        <rdfs:label>list of witnesses</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/material_support -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/material_support">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>The material on which a document is written, such as paper or parchment</rdfs:comment>
+        <rdfs:label>material support</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/metre_and_style -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/metre_and_style">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>The rhythmic structure and stylistic elements of a document&apos;s text</rdfs:comment>
+        <rdfs:label>metre and style</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/mock -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/mock">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>To imitate or mimic something in a way that is often intended to ridicule or criticize, commonly used as a form of satire or parody.</rdfs:comment>
+        <rdfs:label>mock</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/nationalism_patriotism -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/nationalism_patriotism">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>The production of documents that promote national pride or loyalty, sometimes through the embellishment or fabrication of facts, to support patriotic narratives.</rdfs:comment>
+        <rdfs:label>nationalism / patriotism</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/original_document -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/original_document">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Provenance"/>
+        <rdfs:comment>The initial version of a document</rdfs:comment>
+        <rdfs:label>original document</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/orthography -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/orthography">
+        <rdf:type rdf:resource="https://w3id.org/sebi/IntrinsicFeature"/>
+        <rdfs:comment>The conventional spelling system of a document&apos;s language</rdfs:comment>
+        <rdfs:label>orthography</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/presence -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/presence">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>The existence of specific a feature in a document</rdfs:comment>
+        <rdfs:label>presence</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/profit -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/profit">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Intention"/>
+        <rdfs:comment>The creation or manipulation of documents to falsely represent financial gain, typically to deceive stakeholders or inflate the perceived success of an entity.</rdfs:comment>
+        <rdfs:label>profit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/reliability -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/reliability">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>The dependability of a document based on its features and Evaluations.</rdfs:comment>
+        <rdfs:label>reliability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/sigillum_or_seal -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/sigillum_or_seal">
+        <rdf:type rdf:resource="https://w3id.org/sebi/ExtrinsicFeature"/>
+        <rdfs:comment>An official mark or seal found on documents</rdfs:comment>
+        <rdfs:label>sigillum or seal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sebi/veridicality -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sebi/veridicality">
+        <rdf:type rdf:resource="https://w3id.org/sebi/Evaluation"/>
+        <rdfs:comment>The truthfulness and accuracy of a document&apos;s information.</rdfs:comment>
+        <rdfs:label>veridicality</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Scholalry Evidence Based Interpretation ontology (SEBI)</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WNNXNY4YYG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WNNXNY4YYG');
+</script>
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/sebi","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/sebi","name":"Scholalry Evidence Based Interpretation ontology (SEBI)", "headline":"Document describing the ontology https://w3id.org/sebi", "dateReleased":"04/06/2024", "license":"https://creativecommons.org/licenses/by/4.0/legalcode", "author":[{"@type":"Person","name":"Valentina Pasqual","url":"https://orcid.org/0000-0001-5931-5187"}], "contributor":[{"@type":"Person","name":"Andrea Schimmenti","url":"https://orcid.org/0000-0001-7865-7537"},{"@type":"Person","name":"Francesca Tomasi","url":"https://orcid.org/0000-0002-6631-8607"},{"@type":"Person","name":"Fabio Vitali","url":"https://orcid.org/0000-0002-7562-5203"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Scholalry Evidence Based Interpretation ontology (SEBI)</h1>
+<h2>Release: 04/06/2024</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/sebi/version/2024-06-04">https://w3id.org/sebi/version/2024-06-04</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/sebi">https://w3id.org/sebi</a></dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0000-0001-5931-5187">Valentina Pasqual</a>, University of Bologna<a href="mailto:valentina.pasqual2@unibo.it">&#9993;</a></dd>
+
+<dt>Contributors:</dt>
+<dd><a href="https://orcid.org/0000-0001-7865-7537">Andrea Schimmenti</a>, University of Bologna<a href="mailto:andrea.schimmenti2@unibo.it">&#9993;</a></dd><dd><a href="https://orcid.org/0000-0002-6631-8607">Francesca Tomasi</a>, University of Bologna<a href="mailto:francesca.tomasi@unibo.it">&#9993;</a></dd><dd><a href="https://orcid.org/0000-0002-7562-5203">Fabio Vitali</a><a href="mailto:fabio.vitali@unibo.it">&#9993;</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/legalcode" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/legalcode" rel="license" target="_blank">
+<img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/legalcode" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
+<dd> Retrieved from: https://w3id.org/sebi/version/2024-06-04</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">The Scholarly Evidence Based Assessment (SEBI) Ontology addresses the features characterising the interpretative activities performed by scholars in identifying the authenticity of a document. SEBI, as an extension of HiCo ontology, allows the representation and reasoning about the reliability of evidences which support scholars' interpretations. In particular SEBI in provided with a set of controlled vocabularies which shape evidences as the relation of (documentary) features (e.g. style, content) with a set of attributes (e.g. consistency, veridicality). Additionally, SEBI allows to represent negation via an evaluation score (e.g. the evidence (sebi:Evidence) tackles the realiability (sebi:Attribute) of the document's contents (sebi:Feature) with score 0, meaning that the contents of the document are unreliable). </span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>hico</b></td><td>&lt;https://w3id.org/hico#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>sebi</b></td><td>&lt;https://w3id.org/sebi/&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">SEBI: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/Authentic" title="https://w3id.org/sebi/Authentic">Authentic document</a>
+   </li>
+   <li>
+      <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a>
+   </li>
+   <li>
+      <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a>
+   </li>
+   <li>
+      <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a>
+   </li>
+   <li>
+      <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a>
+   </li>
+   <li>
+      <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a>
+   </li>
+   <li>
+      <a href="#/Forgery" title="https://w3id.org/sebi/Forgery">Forgery</a>
+   </li>
+   <li>
+      <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a>
+   </li>
+   <li>
+      <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a>
+   </li>
+   <li>
+      <a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a>
+   </li>
+   <li>
+      <a href="#/SuspectedForgery" title="https://w3id.org/sebi/SuspectedForgery">Supected forged document</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/assess" title="https://w3id.org/sebi/assess">assess</a>
+   </li>
+   <li>
+      <a href="#/evaluate" title="https://w3id.org/sebi/evaluate">evaluate</a>
+   </li>
+   <li>
+      <a href="#/hasEvaluation" title="https://w3id.org/sebi/hasEvaluation">has evaluation</a>
+   </li>
+   <li>
+      <a href="#/hasFeature" title="https://w3id.org/sebi/hasFeature">has feature</a>
+   </li>
+   <li>
+      <a href="#/intend" title="https://w3id.org/sebi/intend">intend</a>
+   </li>
+   <li>
+      <a href="#/intendedTo" title="https://w3id.org/sebi/intendedTo">intended to</a>
+   </li>
+   <li>
+      <a href="#/isAssessedBy" title="https://w3id.org/sebi/isAssessedBy">is assessed by</a>
+   </li>
+   <li>
+      <a href="#/isEvaluatedBy" title="https://w3id.org/sebi/isEvaluatedBy">is evaluated by</a>
+   </li>
+   <li>
+      <a href="#/isSupportedBy" title="https://w3id.org/sebi/isSupportedBy">is supported by</a>
+   </li>
+   <li>
+      <a href="#/support" title="https://w3id.org/sebi/support">support</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/hasEvaluationScore" title="https://w3id.org/sebi/hasEvaluationScore">has evaluation score</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/attendibility" title="https://w3id.org/sebi/attendibility">attendibility</a>
+   </li>
+   <li>
+      <a href="#/authentication_marks" title="https://w3id.org/sebi/authentication_marks">authentication marks</a>
+   </li>
+   <li>
+      <a href="#/chronology_and_dating" title="https://w3id.org/sebi/chronology_and_dating">chronology and dating</a>
+   </li>
+   <li>
+      <a href="#/completeness" title="https://w3id.org/sebi/completeness">completeness</a>
+   </li>
+   <li>
+      <a href="#/consistency" title="https://w3id.org/sebi/consistency">consistency</a>
+   </li>
+   <li>
+      <a href="#/content" title="https://w3id.org/sebi/content">content</a>
+   </li>
+   <li>
+      <a href="#/document_provenance" title="https://w3id.org/sebi/document_provenance">document provenance</a>
+   </li>
+   <li>
+      <a href="#/format_spacing_signs" title="https://w3id.org/sebi/format_spacing_signs">format (spacing, signs)</a>
+   </li>
+   <li>
+      <a href="#/handwriting" title="https://w3id.org/sebi/handwriting">handwriting</a>
+   </li>
+   <li>
+      <a href="#/historical_context" title="https://w3id.org/sebi/historical_context">historical context</a>
+   </li>
+   <li>
+      <a href="#/historical_revisionism" title="https://w3id.org/sebi/historical_revisionism">historical revisionism</a>
+   </li>
+   <li>
+      <a href="#/illustration" title="https://w3id.org/sebi/illustration">illustration or other graphical device</a>
+   </li>
+   <li>
+      <a href="#/indentation" title="https://w3id.org/sebi/indentation">indentation</a>
+   </li>
+   <li>
+      <a href="#/ink" title="https://w3id.org/sebi/ink">ink</a>
+   </li>
+   <li>
+      <a href="#/inter_punctuation" title="https://w3id.org/sebi/inter_punctuation">inter-punctuation</a>
+   </li>
+   <li>
+      <a href="#/interpolations" title="https://w3id.org/sebi/interpolations">interpolations</a>
+   </li>
+   <li>
+      <a href="#/legal_formulas" title="https://w3id.org/sebi/legal_formulas">legal formulas</a>
+   </li>
+   <li>
+      <a href="#/list_of_witnesses" title="https://w3id.org/sebi/list_of_witnesses">list of witnesses</a>
+   </li>
+   <li>
+      <a href="#/material_support" title="https://w3id.org/sebi/material_support">material support</a>
+   </li>
+   <li>
+      <a href="#/metre_and_style" title="https://w3id.org/sebi/metre_and_style">metre and style</a>
+   </li>
+   <li>
+      <a href="#/mock" title="https://w3id.org/sebi/mock">mock</a>
+   </li>
+   <li>
+      <a href="#/nationalism_patriotism" title="https://w3id.org/sebi/nationalism_patriotism">nationalism / patriotism</a>
+   </li>
+   <li>
+      <a href="#/original_document" title="https://w3id.org/sebi/original_document">original document</a>
+   </li>
+   <li>
+      <a href="#/orthography" title="https://w3id.org/sebi/orthography">orthography</a>
+   </li>
+   <li>
+      <a href="#/presence" title="https://w3id.org/sebi/presence">presence</a>
+   </li>
+   <li>
+      <a href="#/profit" title="https://w3id.org/sebi/profit">profit</a>
+   </li>
+   <li>
+      <a href="#/reliability" title="https://w3id.org/sebi/reliability">reliability</a>
+   </li>
+   <li>
+      <a href="#/sigillum_or_seal" title="https://w3id.org/sebi/sigillum_or_seal">sigillum or seal</a>
+   </li>
+   <li>
+      <a href="#/veridicality" title="https://w3id.org/sebi/veridicality">veridicality</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">SEBI: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">
+The Scholarly Evidence Based Interpretation (SEBI) ontology is an OWL 2 DL ontology developed to represent evidences used to support scholarly interpretations.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for SEBI classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by SEBI.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#/Authentic" title="https://w3id.org/sebi/Authentic">Authentic document</a></li>
+  <li><a href="#/Document" title="https://w3id.org/sebi/Document">Document</a></li>
+  <li><a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a></li>
+  <li><a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a></li>
+  <li><a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a></li>
+  <li><a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a></li>
+  <li><a href="#/Forgery" title="https://w3id.org/sebi/Forgery">Forgery</a></li>
+  <li><a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a></li>
+  <li><a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a></li>
+  <li><a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a></li>
+  <li><a href="#/SuspectedForgery" title="https://w3id.org/sebi/SuspectedForgery">Supected forged document</a></li>
+ </ul>
+ <div class="entity" id="/Authentic">
+  <h3>Authentic document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Authentic</p>
+  <div class="comment">
+   <span class="markdown">An authentic document is a document which is believed to be genuine</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Document">
+  <h3>Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Document</p>
+  <div class="comment">
+   <span class="markdown">A document is a recorded piece of information, typically in written, that serves as device to communicate</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Authentic" title="https://w3id.org/sebi/Authentic">Authentic document</a> <sup class="type-c" title="class">c</sup>, <a href="#/Forgery" title="https://w3id.org/sebi/Forgery">Forgery</a> <sup class="type-c" title="class">c</sup>, <a href="#/SuspectedForgery" title="https://w3id.org/sebi/SuspectedForgery">Supected forged document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/intendedTo" title="https://w3id.org/sebi/intendedTo">intended to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/intend" title="https://w3id.org/sebi/intend">intend</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>, <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>, <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Evaluation">
+  <h3>Evaluation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Evaluation</p>
+  <div class="comment">
+   <span class="markdown">A specific quality or feature detected in an evidence (e.g. reliability, completeness)</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasFeature" title="https://w3id.org/sebi/hasFeature">has feature</a> <sup class="type-op" title="object property">op</sup>, <a href="#/isEvaluatedBy" title="https://w3id.org/sebi/isEvaluatedBy">is evaluated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/evaluate" title="https://w3id.org/sebi/evaluate">evaluate</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasEvaluation" title="https://w3id.org/sebi/hasEvaluation">has evaluation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#/attendibility" title="https://w3id.org/sebi/attendibility">attendibility</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/completeness" title="https://w3id.org/sebi/completeness">completeness</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/consistency" title="https://w3id.org/sebi/consistency">consistency</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/presence" title="https://w3id.org/sebi/presence">presence</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/reliability" title="https://w3id.org/sebi/reliability">reliability</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/veridicality" title="https://w3id.org/sebi/veridicality">veridicality</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>, <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>, <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Evidence">
+  <h3>Evidence<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Evidence</p>
+  <div class="comment">
+   <span class="markdown">A piece of evidence or proof used in the investigation</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/assess" title="https://w3id.org/sebi/assess">assess</a> <sup class="type-op" title="object property">op</sup>, <a href="#/evaluate" title="https://w3id.org/sebi/evaluate">evaluate</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasEvaluationScore" title="https://w3id.org/sebi/hasEvaluationScore">has evaluation score</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/support" title="https://w3id.org/sebi/support">support</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/isAssessedBy" title="https://w3id.org/sebi/isAssessedBy">is assessed by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/isEvaluatedBy" title="https://w3id.org/sebi/isEvaluatedBy">is evaluated by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/isSupportedBy" title="https://w3id.org/sebi/isSupportedBy">is supported by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>, <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ExtrinsicFeature">
+  <h3>Extrinsic feature<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/ExtrinsicFeature</p>
+  <div class="comment">
+   <span class="markdown">An external characteristic of a document, such as ink or paper</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#/authentication_marks" title="https://w3id.org/sebi/authentication_marks">authentication marks</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/handwriting" title="https://w3id.org/sebi/handwriting">handwriting</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/indentation" title="https://w3id.org/sebi/indentation">indentation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/ink" title="https://w3id.org/sebi/ink">ink</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/legal_formulas" title="https://w3id.org/sebi/legal_formulas">legal formulas</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/material_support" title="https://w3id.org/sebi/material_support">material support</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/sigillum_or_seal" title="https://w3id.org/sebi/sigillum_or_seal">sigillum or seal</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Feature">
+  <h3>Feature<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Feature</p>
+  <div class="comment">
+   <span class="markdown">A characteristic or Evaluation of a document on which an evidence is based on (e.g. style, language)</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>, <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>, <a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasEvaluation" title="https://w3id.org/sebi/hasEvaluation">has evaluation</a> <sup class="type-op" title="object property">op</sup>, <a href="#/isAssessedBy" title="https://w3id.org/sebi/isAssessedBy">is assessed by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/assess" title="https://w3id.org/sebi/assess">assess</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasFeature" title="https://w3id.org/sebi/hasFeature">has feature</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>, <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Forgery">
+  <h3>Forgery<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Forgery</p>
+  <div class="comment">
+   <span class="markdown">A forgery is a document intentionally created or altered with the intent to deceive or defraud by passing it off as genuine</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Intention">
+  <h3>Intention<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Intention</p>
+  <div class="comment">
+   <span class="markdown">An intention is the purpose that led to the creation of a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/intend" title="https://w3id.org/sebi/intend">intend</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/intendedTo" title="https://w3id.org/sebi/intendedTo">intended to</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#/historical_revisionism" title="https://w3id.org/sebi/historical_revisionism">historical revisionism</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/mock" title="https://w3id.org/sebi/mock">mock</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/nationalism_patriotism" title="https://w3id.org/sebi/nationalism_patriotism">nationalism / patriotism</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/profit" title="https://w3id.org/sebi/profit">profit</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>, <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/IntrinsicFeature">
+  <h3>Intrinsic feature<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/IntrinsicFeature</p>
+  <div class="comment">
+   <span class="markdown">An internal characteristic of a document, such as style or content</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#/chronology_and_dating" title="https://w3id.org/sebi/chronology_and_dating">chronology and dating</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/content" title="https://w3id.org/sebi/content">content</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/format_spacing_signs" title="https://w3id.org/sebi/format_spacing_signs">format (spacing, signs)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/illustration" title="https://w3id.org/sebi/illustration">illustration or other graphical device</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/inter_punctuation" title="https://w3id.org/sebi/inter_punctuation">inter-punctuation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/interpolations" title="https://w3id.org/sebi/interpolations">interpolations</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/metre_and_style" title="https://w3id.org/sebi/metre_and_style">metre and style</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/orthography" title="https://w3id.org/sebi/orthography">orthography</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Provenance">
+  <h3>Provenance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/Provenance</p>
+  <div class="comment">
+   <span class="markdown">The history of ownership and transmission of a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#/document_provenance" title="https://w3id.org/sebi/document_provenance">document provenance</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/historical_context" title="https://w3id.org/sebi/historical_context">historical context</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/list_of_witnesses" title="https://w3id.org/sebi/list_of_witnesses">list of witnesses</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#/original_document" title="https://w3id.org/sebi/original_document">original document</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/SuspectedForgery">
+  <h3>Supected forged document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/SuspectedForgery</p>
+  <div class="comment">
+   <span class="markdown">A suspected forgery is a document that is believed to be a result of forgery, but its authenticity has not been confirmed.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/assess" title="https://w3id.org/sebi/assess">assess</a></li>
+  <li><a href="#/evaluate" title="https://w3id.org/sebi/evaluate">evaluate</a></li>
+  <li><a href="#/hasEvaluation" title="https://w3id.org/sebi/hasEvaluation">has evaluation</a></li>
+  <li><a href="#/hasFeature" title="https://w3id.org/sebi/hasFeature">has feature</a></li>
+  <li><a href="#/intend" title="https://w3id.org/sebi/intend">intend</a></li>
+  <li><a href="#/intendedTo" title="https://w3id.org/sebi/intendedTo">intended to</a></li>
+  <li><a href="#/isAssessedBy" title="https://w3id.org/sebi/isAssessedBy">is assessed by</a></li>
+  <li><a href="#/isEvaluatedBy" title="https://w3id.org/sebi/isEvaluatedBy">is evaluated by</a></li>
+  <li><a href="#/isSupportedBy" title="https://w3id.org/sebi/isSupportedBy">is supported by</a></li>
+  <li><a href="#/support" title="https://w3id.org/sebi/support">support</a></li>
+ </ul>
+ <div class="entity" id="/assess">
+  <h3>assess<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/assess</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating that an Evidence examines a Feature (e.g. the evidence assess (or examines) the style of the document).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/isAssessedBy" title="https://w3id.org/sebi/isAssessedBy">is assessed by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/evaluate">
+  <h3>evaluate<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/evaluate</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating that an Evidence gives an Evaluation when evaluating a Feature (e.g. the evidence evaluates the **presence** of interpolations).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/isEvaluatedBy" title="https://w3id.org/sebi/isEvaluatedBy">is evaluated by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasEvaluation">
+  <h3>has evaluation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/hasEvaluation</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating the Evaluation associated with a Feature (e.g. the presence of interpolations). Inverse proprty of has feature.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasFeature" title="https://w3id.org/sebi/hasFeature">has feature</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasFeature">
+  <h3>has feature<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/hasFeature</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating the Feature to which an Evaluation is associated (e.g. interpolations are present in the document).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasEvaluation" title="https://w3id.org/sebi/hasEvaluation">has evaluation</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/intend">
+  <h3>intend<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/intend</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating which document has been created with a certain Intention. Inverse proprty of intend. </span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/intendedTo" title="https://w3id.org/sebi/intendedTo">intended to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/intendedTo">
+  <h3>intended to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/intendedTo</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating the Intention with which a document has been created (e.g. for profit purposes).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Document" title="https://w3id.org/sebi/Document">Document</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/intend" title="https://w3id.org/sebi/intend">intend</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/isAssessedBy">
+  <h3>is assessed by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/isAssessedBy</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating that a Feature is examined in an Evidence (e.g. the style of the document is assessed (or examined) in the evidence). Inverse property of assess.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Feature" title="https://w3id.org/sebi/Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/assess" title="https://w3id.org/sebi/assess">assess</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/isEvaluatedBy">
+  <h3>is evaluated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/isEvaluatedBy</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating that an Evaluation is given in an Evidence when evaluating a Feature (e.g. **presence** of interpolations has been evaluated in the evidence). Inverse property of evaluate. </span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/evaluate" title="https://w3id.org/sebi/evaluate">evaluate</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/isSupportedBy">
+  <h3>is supported by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/isSupportedBy</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating that an Interpretation is supported by an Evidence. Inverse property of support</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/hico#InterpretationAct" target="_blank" title="https://w3id.org/hico#InterpretationAct">Interpretation Act</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/support" title="https://w3id.org/sebi/support">support</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/support">
+  <h3>support<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/support</p>
+  <div class="comment">
+   <span class="markdown">A relationship indicating that an Evidence supports an Interpretation.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/hico#InterpretationAct" target="_blank" title="https://w3id.org/hico#InterpretationAct">Interpretation Act</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/isSupportedBy" title="https://w3id.org/sebi/isSupportedBy">is supported by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/hasEvaluationScore" title="https://w3id.org/sebi/hasEvaluationScore">has evaluation score</a></li>
+ </ul>
+ <div class="entity" id="/hasEvaluationScore">
+  <h3>has evaluation score<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/hasEvaluationScore</p>
+  <div class="comment">
+   <span class="markdown">The evaluation score given to an Evidence to register its polarity (e.g. score 0 on consistency means inconsistent, score 1 means consintent)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Evidence" title="https://w3id.org/sebi/Evidence">Evidence</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#/attendibility" title="https://w3id.org/sebi/attendibility">attendibility</a></li>
+  <li><a href="#/authentication_marks" title="https://w3id.org/sebi/authentication_marks">authentication marks</a></li>
+  <li><a href="#/chronology_and_dating" title="https://w3id.org/sebi/chronology_and_dating">chronology and dating</a></li>
+  <li><a href="#/completeness" title="https://w3id.org/sebi/completeness">completeness</a></li>
+  <li><a href="#/consistency" title="https://w3id.org/sebi/consistency">consistency</a></li>
+  <li><a href="#/content" title="https://w3id.org/sebi/content">content</a></li>
+  <li><a href="#/document_provenance" title="https://w3id.org/sebi/document_provenance">document provenance</a></li>
+  <li><a href="#/format_spacing_signs" title="https://w3id.org/sebi/format_spacing_signs">format (spacing, signs)</a></li>
+  <li><a href="#/handwriting" title="https://w3id.org/sebi/handwriting">handwriting</a></li>
+  <li><a href="#/historical_context" title="https://w3id.org/sebi/historical_context">historical context</a></li>
+  <li><a href="#/historical_revisionism" title="https://w3id.org/sebi/historical_revisionism">historical revisionism</a></li>
+  <li><a href="#/illustration" title="https://w3id.org/sebi/illustration">illustration or other graphical device</a></li>
+  <li><a href="#/indentation" title="https://w3id.org/sebi/indentation">indentation</a></li>
+  <li><a href="#/ink" title="https://w3id.org/sebi/ink">ink</a></li>
+  <li><a href="#/inter_punctuation" title="https://w3id.org/sebi/inter_punctuation">inter-punctuation</a></li>
+  <li><a href="#/interpolations" title="https://w3id.org/sebi/interpolations">interpolations</a></li>
+  <li><a href="#/legal_formulas" title="https://w3id.org/sebi/legal_formulas">legal formulas</a></li>
+  <li><a href="#/list_of_witnesses" title="https://w3id.org/sebi/list_of_witnesses">list of witnesses</a></li>
+  <li><a href="#/material_support" title="https://w3id.org/sebi/material_support">material support</a></li>
+  <li><a href="#/metre_and_style" title="https://w3id.org/sebi/metre_and_style">metre and style</a></li>
+  <li><a href="#/mock" title="https://w3id.org/sebi/mock">mock</a></li>
+  <li><a href="#/nationalism_patriotism" title="https://w3id.org/sebi/nationalism_patriotism">nationalism / patriotism</a></li>
+  <li><a href="#/original_document" title="https://w3id.org/sebi/original_document">original document</a></li>
+  <li><a href="#/orthography" title="https://w3id.org/sebi/orthography">orthography</a></li>
+  <li><a href="#/presence" title="https://w3id.org/sebi/presence">presence</a></li>
+  <li><a href="#/profit" title="https://w3id.org/sebi/profit">profit</a></li>
+  <li><a href="#/reliability" title="https://w3id.org/sebi/reliability">reliability</a></li>
+  <li><a href="#/sigillum_or_seal" title="https://w3id.org/sebi/sigillum_or_seal">sigillum or seal</a></li>
+  <li><a href="#/veridicality" title="https://w3id.org/sebi/veridicality">veridicality</a></li>
+ </ul>
+ <div class="entity" id="/attendibility">
+  <h3>attendibility<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/attendibility</p>
+  <div class="comment">
+   <span class="markdown">The reliability of a document's content and the trustworthiness of its source.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/authentication_marks">
+  <h3>authentication marks<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/authentication_marks</p>
+  <div class="comment">
+   <span class="markdown">Legal authentication marks or signs on a document that indicate its authenticity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/chronology_and_dating">
+  <h3>chronology and dating<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/chronology_and_dating</p>
+  <div class="comment">
+   <span class="markdown">The timeline and historical context of a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/completeness">
+  <h3>completeness<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/completeness</p>
+  <div class="comment">
+   <span class="markdown">The state of a document having all necessary parts or elements</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/consistency">
+  <h3>consistency<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/consistency</p>
+  <div class="comment">
+   <span class="markdown">The degree to which different parts of a document agree with each other</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/content">
+  <h3>content<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/content</p>
+  <div class="comment">
+   <span class="markdown">The actual information or text contained in a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/document_provenance">
+  <h3>document provenance<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/document_provenance</p>
+  <div class="comment">
+   <span class="markdown">The documented history of a document's ownership and transmission</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/format_spacing_signs">
+  <h3>format (spacing, signs)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/format_spacing_signs</p>
+  <div class="comment">
+   <span class="markdown">The layout, spacing, and sign usage in a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/handwriting">
+  <h3>handwriting<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/handwriting</p>
+  <div class="comment">
+   <span class="markdown">The style and characteristics of writing in a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/historical_context">
+  <h3>historical context<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/historical_context</p>
+  <div class="comment">
+   <span class="markdown">The historical setting and background of a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/historical_revisionism">
+  <h3>historical revisionism<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/historical_revisionism</p>
+  <div class="comment">
+   <span class="markdown">The deliberate alteration or reinterpretation of historical records to reflect a specific agenda, often to legitimize or support a particular viewpoint.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/illustration">
+  <h3>illustration or other graphical device<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/illustration</p>
+  <div class="comment">
+   <span class="markdown">Visual elements in a document, such as drawings or decorations</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/indentation">
+  <h3>indentation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/indentation</p>
+  <div class="comment">
+   <span class="markdown">Impressions left on a document from writing or sealing</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ink">
+  <h3>ink<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/ink</p>
+  <div class="comment">
+   <span class="markdown">The type and composition of ink used in a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/inter_punctuation">
+  <h3>inter-punctuation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/inter_punctuation</p>
+  <div class="comment">
+   <span class="markdown">The punctuation used between words and sentences</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/interpolations">
+  <h3>interpolations<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/interpolations</p>
+  <div class="comment">
+   <span class="markdown">Additional text inserted into a document after its original creation, often indicating tampering.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/legal_formulas">
+  <h3>legal formulas<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/legal_formulas</p>
+  <div class="comment">
+   <span class="markdown">Standard legal phrases or formats in a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/list_of_witnesses">
+  <h3>list of witnesses<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/list_of_witnesses</p>
+  <div class="comment">
+   <span class="markdown">A record of individuals who have seen or authenticated a documents</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/material_support">
+  <h3>material support<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/material_support</p>
+  <div class="comment">
+   <span class="markdown">The material on which a document is written, such as paper or parchment</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/metre_and_style">
+  <h3>metre and style<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/metre_and_style</p>
+  <div class="comment">
+   <span class="markdown">The rhythmic structure and stylistic elements of a document's text</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/mock">
+  <h3>mock<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/mock</p>
+  <div class="comment">
+   <span class="markdown">To imitate or mimic something in a way that is often intended to ridicule or criticize, commonly used as a form of satire or parody.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/nationalism_patriotism">
+  <h3>nationalism / patriotism<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/nationalism_patriotism</p>
+  <div class="comment">
+   <span class="markdown">The production of documents that promote national pride or loyalty, sometimes through the embellishment or fabrication of facts, to support patriotic narratives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/original_document">
+  <h3>original document<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/original_document</p>
+  <div class="comment">
+   <span class="markdown">The initial version of a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Provenance" title="https://w3id.org/sebi/Provenance">Provenance</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/orthography">
+  <h3>orthography<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/orthography</p>
+  <div class="comment">
+   <span class="markdown">The conventional spelling system of a document's language</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/IntrinsicFeature" title="https://w3id.org/sebi/IntrinsicFeature">Intrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/presence">
+  <h3>presence<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/presence</p>
+  <div class="comment">
+   <span class="markdown">The existence of specific a feature in a document</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/profit">
+  <h3>profit<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/profit</p>
+  <div class="comment">
+   <span class="markdown">The creation or manipulation of documents to falsely represent financial gain, typically to deceive stakeholders or inflate the perceived success of an entity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Intention" title="https://w3id.org/sebi/Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/reliability">
+  <h3>reliability<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/reliability</p>
+  <div class="comment">
+   <span class="markdown">The dependability of a document based on its features and Evaluations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/sigillum_or_seal">
+  <h3>sigillum or seal<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/sigillum_or_seal</p>
+  <div class="comment">
+   <span class="markdown">An official mark or seal found on documents</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/ExtrinsicFeature" title="https://w3id.org/sebi/ExtrinsicFeature">Extrinsic feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/veridicality">
+  <h3>veridicality<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/sebi/veridicality</p>
+  <div class="comment">
+   <span class="markdown">The truthfulness and accuracy of a document's information.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#/Evaluation" title="https://w3id.org/sebi/Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<https://w3id.org/sebi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/sebi> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/sebi/version/2024-06-04> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/sebi/assess
+<https://w3id.org/sebi/assess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/assess> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/assess> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/assess> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating that an Evidence examines a Feature (e.g. the evidence assess (or examines) the style of the document)." .
+<https://w3id.org/sebi/assess> <http://www.w3.org/2000/01/rdf-schema#label> "assess" .
+# 
+# https://w3id.org/sebi/evaluate
+<https://w3id.org/sebi/evaluate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/evaluate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/evaluate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/evaluate> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating that an Evidence gives an Evaluation when evaluating a Feature (e.g. the evidence evaluates the **presence** of interpolations)." .
+<https://w3id.org/sebi/evaluate> <http://www.w3.org/2000/01/rdf-schema#label> "evaluate" .
+# 
+# https://w3id.org/sebi/hasEvaluation
+<https://w3id.org/sebi/hasEvaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/hasEvaluation> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/sebi/hasFeature> .
+<https://w3id.org/sebi/hasEvaluation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/hasEvaluation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/hasEvaluation> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating the Evaluation associated with a Feature (e.g. the presence of interpolations). Inverse proprty of has feature." .
+<https://w3id.org/sebi/hasEvaluation> <http://www.w3.org/2000/01/rdf-schema#label> "has evaluation" .
+# 
+# https://w3id.org/sebi/hasFeature
+<https://w3id.org/sebi/hasFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/hasFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/hasFeature> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/hasFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating the Feature to which an Evaluation is associated (e.g. interpolations are present in the document)." .
+<https://w3id.org/sebi/hasFeature> <http://www.w3.org/2000/01/rdf-schema#label> "has feature" .
+# 
+# https://w3id.org/sebi/intend
+<https://w3id.org/sebi/intend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/intend> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/sebi/intendedTo> .
+<https://w3id.org/sebi/intend> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/intend> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Document> .
+<https://w3id.org/sebi/intend> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating which document has been created with a certain Intention. Inverse proprty of intend. " .
+<https://w3id.org/sebi/intend> <http://www.w3.org/2000/01/rdf-schema#label> "intend" .
+# 
+# https://w3id.org/sebi/intendedTo
+<https://w3id.org/sebi/intendedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/intendedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Document> .
+<https://w3id.org/sebi/intendedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/intendedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating the Intention with which a document has been created (e.g. for profit purposes)." .
+<https://w3id.org/sebi/intendedTo> <http://www.w3.org/2000/01/rdf-schema#label> "intended to" .
+# 
+# https://w3id.org/sebi/isAssessedBy
+<https://w3id.org/sebi/isAssessedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/isAssessedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/sebi/assess> .
+<https://w3id.org/sebi/isAssessedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/isAssessedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/isAssessedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating that a Feature is examined in an Evidence (e.g. the style of the document is assessed (or examined) in the evidence). Inverse property of assess." .
+<https://w3id.org/sebi/isAssessedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is assessed by" .
+# 
+# https://w3id.org/sebi/isEvaluatedBy
+<https://w3id.org/sebi/isEvaluatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/isEvaluatedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/sebi/evaluate> .
+<https://w3id.org/sebi/isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating that an Evaluation is given in an Evidence when evaluating a Feature  (e.g. **presence** of interpolations has been evaluated in the evidence). Inverse property of evaluate. " .
+<https://w3id.org/sebi/isEvaluatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is evaluated by" .
+# 
+# https://w3id.org/sebi/isSupportedBy
+<https://w3id.org/sebi/isSupportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/isSupportedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/sebi/support> .
+<https://w3id.org/sebi/isSupportedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hico#InterpretationAct> .
+<https://w3id.org/hico#InterpretationAct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/isSupportedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/isSupportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating that an Interpretation is supported by an Evidence. Inverse property of support" .
+<https://w3id.org/sebi/isSupportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is supported by" .
+# 
+# https://w3id.org/sebi/support
+<https://w3id.org/sebi/support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sebi/support> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/support> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hico#InterpretationAct> .
+<https://w3id.org/sebi/support> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating that an Evidence supports an Interpretation." .
+<https://w3id.org/sebi/support> <http://www.w3.org/2000/01/rdf-schema#label> "support" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/sebi/hasEvaluationScore
+<https://w3id.org/sebi/hasEvaluationScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sebi/hasEvaluationScore> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/hasEvaluationScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/sebi/hasEvaluationScore> <http://www.w3.org/2000/01/rdf-schema#comment> "The evaluation score given to an Evidence to register its polarity (e.g. score 0 on consistency means inconsistent, score 1 means consintent)" .
+<https://w3id.org/sebi/hasEvaluationScore> <http://www.w3.org/2000/01/rdf-schema#label> "has evaluation score" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/hico#InterpretationAct
+# 
+# https://w3id.org/sebi/Authentic
+<https://w3id.org/sebi/Authentic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Authentic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sebi/Document> .
+<https://w3id.org/sebi/Authentic> <http://www.w3.org/2000/01/rdf-schema#comment> "An authentic document is a document which is believed to be genuine" .
+<https://w3id.org/sebi/Authentic> <http://www.w3.org/2000/01/rdf-schema#label> "Authentic document" .
+# 
+# https://w3id.org/sebi/Document
+<https://w3id.org/sebi/Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Document> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/Document> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/Document> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/Document> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/Document> <http://www.w3.org/2000/01/rdf-schema#comment> "A document is a recorded piece of information, typically in written, that serves as device to communicate" .
+<https://w3id.org/sebi/Document> <http://www.w3.org/2000/01/rdf-schema#label> "Document" .
+# 
+# https://w3id.org/sebi/Evaluation
+<https://w3id.org/sebi/Evaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Evaluation> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Evidence> .
+<https://w3id.org/sebi/Evaluation> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/Evaluation> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/Evaluation> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific quality or feature detected in an evidence (e.g. reliability, completeness)" .
+<https://w3id.org/sebi/Evaluation> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation" .
+# 
+# https://w3id.org/sebi/Evidence
+<https://w3id.org/sebi/Evidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Evidence> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/Evidence> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/Evidence> <http://www.w3.org/2000/01/rdf-schema#comment> "A piece of evidence or proof used in the investigation" .
+<https://w3id.org/sebi/Evidence> <http://www.w3.org/2000/01/rdf-schema#label> "Evidence" .
+# 
+# https://w3id.org/sebi/ExtrinsicFeature
+<https://w3id.org/sebi/ExtrinsicFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/ExtrinsicFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/ExtrinsicFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An external characteristic of a document, such as ink or paper" .
+<https://w3id.org/sebi/ExtrinsicFeature> <http://www.w3.org/2000/01/rdf-schema#label> "Extrinsic feature" .
+# 
+# https://w3id.org/sebi/Feature
+<https://w3id.org/sebi/Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Feature> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/Feature> <http://www.w3.org/2000/01/rdf-schema#comment> "A characteristic or Evaluation of a document on which an evidence is based on (e.g. style, language)" .
+<https://w3id.org/sebi/Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature" .
+# 
+# https://w3id.org/sebi/Forgery
+<https://w3id.org/sebi/Forgery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Forgery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sebi/Document> .
+<https://w3id.org/sebi/Forgery> <http://www.w3.org/2000/01/rdf-schema#comment> "A forgery is a document intentionally created or altered with the intent to deceive or defraud by passing it off as genuine" .
+<https://w3id.org/sebi/Forgery> <http://www.w3.org/2000/01/rdf-schema#label> "Forgery" .
+# 
+# https://w3id.org/sebi/Intention
+<https://w3id.org/sebi/Intention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Intention> <http://www.w3.org/2000/01/rdf-schema#comment> "An intention is the purpose that led to the creation of a document" .
+<https://w3id.org/sebi/Intention> <http://www.w3.org/2000/01/rdf-schema#label> "Intention" .
+# 
+# https://w3id.org/sebi/IntrinsicFeature
+<https://w3id.org/sebi/IntrinsicFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/IntrinsicFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/IntrinsicFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An internal characteristic of a document, such as style or content" .
+<https://w3id.org/sebi/IntrinsicFeature> <http://www.w3.org/2000/01/rdf-schema#label> "Intrinsic feature" .
+# 
+# https://w3id.org/sebi/Provenance
+<https://w3id.org/sebi/Provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/Provenance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sebi/Feature> .
+<https://w3id.org/sebi/Provenance> <http://www.w3.org/2000/01/rdf-schema#comment> "The history of ownership and transmission of a document" .
+<https://w3id.org/sebi/Provenance> <http://www.w3.org/2000/01/rdf-schema#label> "Provenance" .
+# 
+# https://w3id.org/sebi/SuspectedForgery
+<https://w3id.org/sebi/SuspectedForgery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sebi/SuspectedForgery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sebi/Document> .
+<https://w3id.org/sebi/SuspectedForgery> <http://www.w3.org/2000/01/rdf-schema#comment> "A suspected forgery is a document that is believed to be a result of forgery, but its authenticity has not been confirmed." .
+<https://w3id.org/sebi/SuspectedForgery> <http://www.w3.org/2000/01/rdf-schema#label> "Supected forged document" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/sebi/attendibility
+<https://w3id.org/sebi/attendibility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/attendibility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/attendibility> <http://www.w3.org/2000/01/rdf-schema#comment> "The reliability of a document's content and the trustworthiness of its source." .
+<https://w3id.org/sebi/attendibility> <http://www.w3.org/2000/01/rdf-schema#label> "attendibility" .
+# 
+# https://w3id.org/sebi/authentication_marks
+<https://w3id.org/sebi/authentication_marks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/authentication_marks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/authentication_marks> <http://www.w3.org/2000/01/rdf-schema#comment> "Legal authentication marks or signs on a document that indicate its authenticity." .
+<https://w3id.org/sebi/authentication_marks> <http://www.w3.org/2000/01/rdf-schema#label> "authentication marks" .
+# 
+# https://w3id.org/sebi/chronology_and_dating
+<https://w3id.org/sebi/chronology_and_dating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/chronology_and_dating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/chronology_and_dating> <http://www.w3.org/2000/01/rdf-schema#comment> "The timeline and historical context of a document" .
+<https://w3id.org/sebi/chronology_and_dating> <http://www.w3.org/2000/01/rdf-schema#label> "chronology and dating" .
+# 
+# https://w3id.org/sebi/completeness
+<https://w3id.org/sebi/completeness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/completeness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/completeness> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a document having all necessary parts or elements" .
+<https://w3id.org/sebi/completeness> <http://www.w3.org/2000/01/rdf-schema#label> "completeness" .
+# 
+# https://w3id.org/sebi/consistency
+<https://w3id.org/sebi/consistency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/consistency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/consistency> <http://www.w3.org/2000/01/rdf-schema#comment> "The degree to which different parts of a document agree with each other" .
+<https://w3id.org/sebi/consistency> <http://www.w3.org/2000/01/rdf-schema#label> "consistency" .
+# 
+# https://w3id.org/sebi/content
+<https://w3id.org/sebi/content> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/content> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/content> <http://www.w3.org/2000/01/rdf-schema#comment> "The actual information or text contained in a document" .
+<https://w3id.org/sebi/content> <http://www.w3.org/2000/01/rdf-schema#label> "content" .
+# 
+# https://w3id.org/sebi/document_provenance
+<https://w3id.org/sebi/document_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/document_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Provenance> .
+<https://w3id.org/sebi/document_provenance> <http://www.w3.org/2000/01/rdf-schema#comment> "The documented history of a document's ownership and transmission" .
+<https://w3id.org/sebi/document_provenance> <http://www.w3.org/2000/01/rdf-schema#label> "document provenance" .
+# 
+# https://w3id.org/sebi/format_spacing_signs
+<https://w3id.org/sebi/format_spacing_signs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/format_spacing_signs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/format_spacing_signs> <http://www.w3.org/2000/01/rdf-schema#comment> "The layout, spacing, and sign usage in a document" .
+<https://w3id.org/sebi/format_spacing_signs> <http://www.w3.org/2000/01/rdf-schema#label> "format (spacing, signs)" .
+# 
+# https://w3id.org/sebi/handwriting
+<https://w3id.org/sebi/handwriting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/handwriting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/handwriting> <http://www.w3.org/2000/01/rdf-schema#comment> "The style and characteristics of writing in a document" .
+<https://w3id.org/sebi/handwriting> <http://www.w3.org/2000/01/rdf-schema#label> "handwriting" .
+# 
+# https://w3id.org/sebi/historical_context
+<https://w3id.org/sebi/historical_context> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/historical_context> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Provenance> .
+<https://w3id.org/sebi/historical_context> <http://www.w3.org/2000/01/rdf-schema#comment> "The historical setting and background of a document" .
+<https://w3id.org/sebi/historical_context> <http://www.w3.org/2000/01/rdf-schema#label> "historical context" .
+# 
+# https://w3id.org/sebi/historical_revisionism
+<https://w3id.org/sebi/historical_revisionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/historical_revisionism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/historical_revisionism> <http://www.w3.org/2000/01/rdf-schema#comment> "The deliberate alteration or reinterpretation of historical records to reflect a specific agenda, often to legitimize or support a particular viewpoint." .
+<https://w3id.org/sebi/historical_revisionism> <http://www.w3.org/2000/01/rdf-schema#label> "historical revisionism" .
+# 
+# https://w3id.org/sebi/illustration
+<https://w3id.org/sebi/illustration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/illustration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/illustration> <http://www.w3.org/2000/01/rdf-schema#comment> "Visual elements in a document, such as drawings or decorations" .
+<https://w3id.org/sebi/illustration> <http://www.w3.org/2000/01/rdf-schema#label> "illustration or other graphical device" .
+# 
+# https://w3id.org/sebi/indentation
+<https://w3id.org/sebi/indentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/indentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/indentation> <http://www.w3.org/2000/01/rdf-schema#comment> "Impressions left on a document from writing or sealing" .
+<https://w3id.org/sebi/indentation> <http://www.w3.org/2000/01/rdf-schema#label> "indentation" .
+# 
+# https://w3id.org/sebi/ink
+<https://w3id.org/sebi/ink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/ink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/ink> <http://www.w3.org/2000/01/rdf-schema#comment> "The type and composition of ink used in a document" .
+<https://w3id.org/sebi/ink> <http://www.w3.org/2000/01/rdf-schema#label> "ink" .
+# 
+# https://w3id.org/sebi/inter_punctuation
+<https://w3id.org/sebi/inter_punctuation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/inter_punctuation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/inter_punctuation> <http://www.w3.org/2000/01/rdf-schema#comment> "The punctuation used between words and sentences" .
+<https://w3id.org/sebi/inter_punctuation> <http://www.w3.org/2000/01/rdf-schema#label> "inter-punctuation" .
+# 
+# https://w3id.org/sebi/interpolations
+<https://w3id.org/sebi/interpolations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/interpolations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/interpolations> <http://www.w3.org/2000/01/rdf-schema#comment> "Additional text inserted into a document after its original creation, often indicating tampering." .
+<https://w3id.org/sebi/interpolations> <http://www.w3.org/2000/01/rdf-schema#label> "interpolations" .
+# 
+# https://w3id.org/sebi/legal_formulas
+<https://w3id.org/sebi/legal_formulas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/legal_formulas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/legal_formulas> <http://www.w3.org/2000/01/rdf-schema#comment> "Standard legal phrases or formats in a document" .
+<https://w3id.org/sebi/legal_formulas> <http://www.w3.org/2000/01/rdf-schema#label> "legal formulas" .
+# 
+# https://w3id.org/sebi/list_of_witnesses
+<https://w3id.org/sebi/list_of_witnesses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/list_of_witnesses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Provenance> .
+<https://w3id.org/sebi/list_of_witnesses> <http://www.w3.org/2000/01/rdf-schema#comment> "A record of individuals who have seen or authenticated a documents" .
+<https://w3id.org/sebi/list_of_witnesses> <http://www.w3.org/2000/01/rdf-schema#label> "list of witnesses" .
+# 
+# https://w3id.org/sebi/material_support
+<https://w3id.org/sebi/material_support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/material_support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/material_support> <http://www.w3.org/2000/01/rdf-schema#comment> "The material on which a document is written, such as paper or parchment" .
+<https://w3id.org/sebi/material_support> <http://www.w3.org/2000/01/rdf-schema#label> "material support" .
+# 
+# https://w3id.org/sebi/metre_and_style
+<https://w3id.org/sebi/metre_and_style> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/metre_and_style> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/metre_and_style> <http://www.w3.org/2000/01/rdf-schema#comment> "The rhythmic structure and stylistic elements of a document's text" .
+<https://w3id.org/sebi/metre_and_style> <http://www.w3.org/2000/01/rdf-schema#label> "metre and style" .
+# 
+# https://w3id.org/sebi/mock
+<https://w3id.org/sebi/mock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/mock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/mock> <http://www.w3.org/2000/01/rdf-schema#comment> "To imitate or mimic something in a way that is often intended to ridicule or criticize, commonly used as a form of satire or parody." .
+<https://w3id.org/sebi/mock> <http://www.w3.org/2000/01/rdf-schema#label> "mock" .
+# 
+# https://w3id.org/sebi/nationalism_patriotism
+<https://w3id.org/sebi/nationalism_patriotism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/nationalism_patriotism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/nationalism_patriotism> <http://www.w3.org/2000/01/rdf-schema#comment> "The production of documents that promote national pride or loyalty, sometimes through the embellishment or fabrication of facts, to support patriotic narratives." .
+<https://w3id.org/sebi/nationalism_patriotism> <http://www.w3.org/2000/01/rdf-schema#label> "nationalism / patriotism" .
+# 
+# https://w3id.org/sebi/original_document
+<https://w3id.org/sebi/original_document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/original_document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Provenance> .
+<https://w3id.org/sebi/original_document> <http://www.w3.org/2000/01/rdf-schema#comment> "The initial version of a document" .
+<https://w3id.org/sebi/original_document> <http://www.w3.org/2000/01/rdf-schema#label> "original document" .
+# 
+# https://w3id.org/sebi/orthography
+<https://w3id.org/sebi/orthography> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/orthography> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/IntrinsicFeature> .
+<https://w3id.org/sebi/orthography> <http://www.w3.org/2000/01/rdf-schema#comment> "The conventional spelling system of a document's language" .
+<https://w3id.org/sebi/orthography> <http://www.w3.org/2000/01/rdf-schema#label> "orthography" .
+# 
+# https://w3id.org/sebi/presence
+<https://w3id.org/sebi/presence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/presence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/presence> <http://www.w3.org/2000/01/rdf-schema#comment> "The existence of specific a feature in a document" .
+<https://w3id.org/sebi/presence> <http://www.w3.org/2000/01/rdf-schema#label> "presence" .
+# 
+# https://w3id.org/sebi/profit
+<https://w3id.org/sebi/profit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/profit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Intention> .
+<https://w3id.org/sebi/profit> <http://www.w3.org/2000/01/rdf-schema#comment> "The creation or manipulation of documents to falsely represent financial gain, typically to deceive stakeholders or inflate the perceived success of an entity." .
+<https://w3id.org/sebi/profit> <http://www.w3.org/2000/01/rdf-schema#label> "profit" .
+# 
+# https://w3id.org/sebi/reliability
+<https://w3id.org/sebi/reliability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/reliability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/reliability> <http://www.w3.org/2000/01/rdf-schema#comment> "The dependability of a document based on its features and Evaluations." .
+<https://w3id.org/sebi/reliability> <http://www.w3.org/2000/01/rdf-schema#label> "reliability" .
+# 
+# https://w3id.org/sebi/sigillum_or_seal
+<https://w3id.org/sebi/sigillum_or_seal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/sigillum_or_seal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/ExtrinsicFeature> .
+<https://w3id.org/sebi/sigillum_or_seal> <http://www.w3.org/2000/01/rdf-schema#comment> "An official mark or seal found on documents" .
+<https://w3id.org/sebi/sigillum_or_seal> <http://www.w3.org/2000/01/rdf-schema#label> "sigillum or seal" .
+# 
+# https://w3id.org/sebi/veridicality
+<https://w3id.org/sebi/veridicality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/sebi/veridicality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sebi/Evaluation> .
+<https://w3id.org/sebi/veridicality> <http://www.w3.org/2000/01/rdf-schema#comment> "The truthfulness and accuracy of a document's information." .
+<https://w3id.org/sebi/veridicality> <http://www.w3.org/2000/01/rdf-schema#label> "veridicality" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

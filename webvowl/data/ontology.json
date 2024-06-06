@@ -1,0 +1,834 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "https://w3id.org/hico", "https://w3id.org/sebi", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "https://w3id.org/sebi"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/sebi/Evaluation",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Evaluation",
+      "undefined" : "Evaluation"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/sebi/attendibility",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The reliability of a document's content and the trustworthiness of its source."
+      },
+      "labels" : {
+        "IRI-based" : "attendibility",
+        "undefined" : "attendibility"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/completeness",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The state of a document having all necessary parts or elements"
+      },
+      "labels" : {
+        "IRI-based" : "completeness",
+        "undefined" : "completeness"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/reliability",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The dependability of a document based on its features and Evaluations."
+      },
+      "labels" : {
+        "IRI-based" : "reliability",
+        "undefined" : "reliability"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/veridicality",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The truthfulness and accuracy of a document's information."
+      },
+      "labels" : {
+        "IRI-based" : "veridicality",
+        "undefined" : "veridicality"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/consistency",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The degree to which different parts of a document agree with each other"
+      },
+      "labels" : {
+        "IRI-based" : "consistency",
+        "undefined" : "consistency"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/presence",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The existence of specific a feature in a document"
+      },
+      "labels" : {
+        "IRI-based" : "presence",
+        "undefined" : "presence"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A specific quality or feature detected in an evidence (e.g. reliability, completeness)"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/sebi/Provenance",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Provenance",
+      "undefined" : "Provenance"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/sebi/historical_context",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The historical setting and background of a document"
+      },
+      "labels" : {
+        "IRI-based" : "historical_context",
+        "undefined" : "historical context"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/original_document",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The initial version of a document"
+      },
+      "labels" : {
+        "IRI-based" : "original_document",
+        "undefined" : "original document"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/document_provenance",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The documented history of a document's ownership and transmission"
+      },
+      "labels" : {
+        "IRI-based" : "document_provenance",
+        "undefined" : "document provenance"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/list_of_witnesses",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "A record of individuals who have seen or authenticated a documents"
+      },
+      "labels" : {
+        "IRI-based" : "list_of_witnesses",
+        "undefined" : "list of witnesses"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "The history of ownership and transmission of a document"
+    },
+    "attributes" : [ "external" ],
+    "id" : "23",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/sebi/ExtrinsicFeature",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ExtrinsicFeature",
+      "undefined" : "Extrinsic feature"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/sebi/handwriting",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The style and characteristics of writing in a document"
+      },
+      "labels" : {
+        "IRI-based" : "handwriting",
+        "undefined" : "handwriting"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/material_support",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The material on which a document is written, such as paper or parchment"
+      },
+      "labels" : {
+        "IRI-based" : "material_support",
+        "undefined" : "material support"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/ink",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The type and composition of ink used in a document"
+      },
+      "labels" : {
+        "IRI-based" : "ink",
+        "undefined" : "ink"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/sigillum_or_seal",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "An official mark or seal found on documents"
+      },
+      "labels" : {
+        "IRI-based" : "sigillum_or_seal",
+        "undefined" : "sigillum or seal"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/indentation",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "Impressions left on a document from writing or sealing"
+      },
+      "labels" : {
+        "IRI-based" : "indentation",
+        "undefined" : "indentation"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/authentication_marks",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "Legal authentication marks or signs on a document that indicate its authenticity."
+      },
+      "labels" : {
+        "IRI-based" : "authentication_marks",
+        "undefined" : "authentication marks"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/legal_formulas",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "Standard legal phrases or formats in a document"
+      },
+      "labels" : {
+        "IRI-based" : "legal_formulas",
+        "undefined" : "legal formulas"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "An external characteristic of a document, such as ink or paper"
+    },
+    "attributes" : [ "external" ],
+    "id" : "27",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/sebi/Intention",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Intention",
+      "undefined" : "Intention"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/sebi/nationalism_patriotism",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The production of documents that promote national pride or loyalty, sometimes through the embellishment or fabrication of facts, to support patriotic narratives."
+      },
+      "labels" : {
+        "IRI-based" : "nationalism_patriotism",
+        "undefined" : "nationalism / patriotism"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/profit",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The creation or manipulation of documents to falsely represent financial gain, typically to deceive stakeholders or inflate the perceived success of an entity."
+      },
+      "labels" : {
+        "IRI-based" : "profit",
+        "undefined" : "profit"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/historical_revisionism",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The deliberate alteration or reinterpretation of historical records to reflect a specific agenda, often to legitimize or support a particular viewpoint."
+      },
+      "labels" : {
+        "IRI-based" : "historical_revisionism",
+        "undefined" : "historical revisionism"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/mock",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "To imitate or mimic something in a way that is often intended to ridicule or criticize, commonly used as a form of satire or parody."
+      },
+      "labels" : {
+        "IRI-based" : "mock",
+        "undefined" : "mock"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "An intention is the purpose that led to the creation of a document"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/sebi/IntrinsicFeature",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "IntrinsicFeature",
+      "undefined" : "Intrinsic feature"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/sebi/inter_punctuation",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The punctuation used between words and sentences"
+      },
+      "labels" : {
+        "IRI-based" : "inter_punctuation",
+        "undefined" : "inter-punctuation"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/illustration",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "Visual elements in a document, such as drawings or decorations"
+      },
+      "labels" : {
+        "IRI-based" : "illustration",
+        "undefined" : "illustration or other graphical device"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/chronology_and_dating",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The timeline and historical context of a document"
+      },
+      "labels" : {
+        "IRI-based" : "chronology_and_dating",
+        "undefined" : "chronology and dating"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/orthography",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The conventional spelling system of a document's language"
+      },
+      "labels" : {
+        "IRI-based" : "orthography",
+        "undefined" : "orthography"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/metre_and_style",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The rhythmic structure and stylistic elements of a document's text"
+      },
+      "labels" : {
+        "IRI-based" : "metre_and_style",
+        "undefined" : "metre and style"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/content",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The actual information or text contained in a document"
+      },
+      "labels" : {
+        "IRI-based" : "content",
+        "undefined" : "content"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/interpolations",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "Additional text inserted into a document after its original creation, often indicating tampering."
+      },
+      "labels" : {
+        "IRI-based" : "interpolations",
+        "undefined" : "interpolations"
+      }
+    }, {
+      "iri" : "https://w3id.org/sebi/format_spacing_signs",
+      "baseIri" : "https://w3id.org/sebi",
+      "comment" : {
+        "undefined" : "The layout, spacing, and sign usage in a document"
+      },
+      "labels" : {
+        "IRI-based" : "format_spacing_signs",
+        "undefined" : "format (spacing, signs)"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "An internal characteristic of a document, such as style or content"
+    },
+    "attributes" : [ "external" ],
+    "id" : "28",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "https://w3id.org/sebi/SuspectedForgery",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SuspectedForgery",
+      "undefined" : "Supected forged document"
+    },
+    "comment" : {
+      "undefined" : "A suspected forgery is a document that is believed to be a result of forgery, but its authenticity has not been confirmed."
+    },
+    "attributes" : [ "external" ],
+    "id" : "29",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/sebi/Forgery",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Forgery",
+      "undefined" : "Forgery"
+    },
+    "comment" : {
+      "undefined" : "A forgery is a document intentionally created or altered with the intent to deceive or defraud by passing it off as genuine"
+    },
+    "attributes" : [ "external" ],
+    "id" : "30",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/sebi/Document",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Document",
+      "undefined" : "Document"
+    },
+    "subClasses" : [ "29", "30", "32" ],
+    "comment" : {
+      "undefined" : "A document is a recorded piece of information, typically in written, that serves as device to communicate"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/sebi/Feature",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Feature",
+      "undefined" : "Feature"
+    },
+    "subClasses" : [ "28", "23", "27" ],
+    "comment" : {
+      "undefined" : "A characteristic or Evaluation of a document on which an evidence is based on (e.g. style, language)"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/sebi/Evidence",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Evidence",
+      "undefined" : "Evidence"
+    },
+    "comment" : {
+      "undefined" : "A piece of evidence or proof used in the investigation"
+    },
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/sebi/Authentic",
+    "baseIri" : "https://w3id.org/sebi",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Authentic",
+      "undefined" : "Authentic document"
+    },
+    "comment" : {
+      "undefined" : "An authentic document is a document which is believed to be genuine"
+    },
+    "attributes" : [ "external" ],
+    "id" : "32",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://w3id.org/hico#InterpretationAct",
+    "baseIri" : "https://w3id.org/hico",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InterpretationAct"
+    },
+    "attributes" : [ "external" ],
+    "id" : "26"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "9",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "11",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "14",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "15",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "16",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "17",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "20",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/sebi/intend",
+    "inverse" : "3",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "intend",
+      "undefined" : "intend"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "A relationship indicating which document has been created with a certain Intention. Inverse proprty of intend. "
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/sebi/hasEvaluationScore",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasEvaluationScore",
+      "undefined" : "has evaluation score"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "The evaluation score given to an Evidence to register its polarity (e.g. score 0 on consistency means inconsistent, score 1 means consintent)"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "4"
+  }, {
+    "range" : "5",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "8"
+  }, {
+    "range" : "10",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "9"
+  }, {
+    "range" : "10",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/sebi/assess",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "assess",
+      "undefined" : "assess"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "A relationship indicating that an Evidence examines a Feature (e.g. the evidence assess (or examines) the style of the document)."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "12"
+  }, {
+    "range" : "1",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "13"
+  }, {
+    "range" : "5",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "14"
+  }, {
+    "range" : "10",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "15"
+  }, {
+    "range" : "1",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "16"
+  }, {
+    "range" : "1",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/sebi/isAssessedBy",
+    "inverse" : "12",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "isAssessedBy",
+      "undefined" : "is assessed by"
+    },
+    "domain" : "10",
+    "comment" : {
+      "undefined" : "A relationship indicating that a Feature is examined in an Evidence (e.g. the style of the document is assessed (or examined) in the evidence). Inverse property of assess."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "18"
+  }, {
+    "range" : "1",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "19"
+  }, {
+    "range" : "7",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/sebi/hasEvaluation",
+    "inverse" : "22",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasEvaluation",
+      "undefined" : "has evaluation"
+    },
+    "domain" : "10",
+    "comment" : {
+      "undefined" : "A relationship indicating the Evaluation associated with a Feature (e.g. the presence of interpolations). Inverse proprty of has feature."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/sebi/evaluate",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "evaluate",
+      "undefined" : "evaluate"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "A relationship indicating that an Evidence gives an Evaluation when evaluating a Feature (e.g. the evidence evaluates the **presence** of interpolations)."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/sebi/support",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "support",
+      "undefined" : "support"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "A relationship indicating that an Evidence supports an Interpretation."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://w3id.org/sebi/hasFeature",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasFeature",
+      "undefined" : "has feature"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "A relationship indicating the Feature to which an Evaluation is associated (e.g. interpolations are present in the document)."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/sebi/isSupportedBy",
+    "inverse" : "25",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "isSupportedBy",
+      "undefined" : "is supported by"
+    },
+    "domain" : "26",
+    "comment" : {
+      "undefined" : "A relationship indicating that an Interpretation is supported by an Evidence. Inverse property of support"
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/sebi/intendedTo",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "intendedTo",
+      "undefined" : "intended to"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "A relationship indicating the Intention with which a document has been created (e.g. for profit purposes)."
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/sebi/isEvaluatedBy",
+    "inverse" : "24",
+    "baseIri" : "https://w3id.org/sebi",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "isEvaluatedBy",
+      "undefined" : "is evaluated by"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "A relationship indicating that an Evaluation is given in an Evidence when evaluating a Feature  (e.g. **presence** of interpolations has been evaluated in the evidence). Inverse property of evaluate. "
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "33"
+  }, {
+    "range" : "10",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  }, {
+    "range" : "2",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "35"
+  }, {
+    "range" : "10",
+    "domain" : "27",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "range" : "10",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "range" : "2",
+    "domain" : "30",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "range" : "2",
+    "domain" : "29",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
+  } ]
+}
