@@ -73,7 +73,7 @@ $(function(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>Scholalry Evidence Based Interpretation ontology (SEBI)</h1>
+<h1>Scholarly Evidence Based Interpretation ontology (SEBI)</h1>
 <h2>Release: 04/06/2024</h2>
 
 
@@ -83,10 +83,10 @@ $(function(){
 <dt>Latest version:</dt>
 <dd><a href="https://w3id.org/sebi">https://w3id.org/sebi</a></dd>
 <dt>Authors:</dt>
-<dd><a href="https://orcid.org/0000-0001-5931-5187">Valentina Pasqual</a>, University of Bologna<a href="mailto:valentina.pasqual2@unibo.it">&#9993;</a></dd>
+<dd><a href="https://orcid.org/0000-0001-5931-5187">Valentina Pasqual</a>, University of Bologna <a href="mailto:valentina.pasqual2@unibo.it">&#9993;</a></dd>
 
 <dt>Contributors:</dt>
-<dd><a href="https://orcid.org/0000-0001-7865-7537">Andrea Schimmenti</a>, University of Bologna<a href="mailto:andrea.schimmenti2@unibo.it">&#9993;</a></dd><dd><a href="https://orcid.org/0000-0002-6631-8607">Francesca Tomasi</a>, University of Bologna<a href="mailto:francesca.tomasi@unibo.it">&#9993;</a></dd><dd><a href="https://orcid.org/0000-0002-7562-5203">Fabio Vitali</a><a href="mailto:fabio.vitali@unibo.it">&#9993;</a></dd>
+<dd><a href="https://orcid.org/0000-0001-7865-7537">Andrea Schimmenti</a>, University of Bologna <a href="mailto:andrea.schimmenti2@unibo.it">&#9993;</a></dd><dd><a href="https://orcid.org/0000-0002-6631-8607">Francesca Tomasi</a>, University of Bologna <a href="mailto:francesca.tomasi@unibo.it">&#9993;</a></dd><dd><a href="https://orcid.org/0000-0002-7562-5203">Fabio Vitali</a>, University of Bologna <a href="mailto:fabio.vitali@unibo.it">&#9993;</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/legalcode" /></a>
 <a href="https://creativecommons.org/licenses/by/4.0/legalcode" rel="license" target="_blank">
@@ -110,7 +110,56 @@ This is a placeholder text for the abstract. The abstract should contain a coupl
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">The Scholarly Evidence Based Assessment (SEBI) Ontology addresses the features characterising the interpretative activities performed by scholars in identifying the authenticity of a document. SEBI, as an extension of HiCo ontology, allows the representation and reasoning about the reliability of evidences which support scholars' interpretations. In particular SEBI in provided with a set of controlled vocabularies which shape evidences as the relation of (documentary) features (e.g. style, content) with a set of attributes (e.g. consistency, veridicality). Additionally, SEBI allows to represent negation via an evaluation score (e.g. the evidence (sebi:Evidence) tackles the realiability (sebi:Attribute) of the document's contents (sebi:Feature) with score 0, meaning that the contents of the document are unreliable). </span>
+
+
+<div class="markdown">
+   The Scholarly Evidence Based Assessment (SEBI) ontology, an extension of HiCo ontology, represents the evidences collected by scholars to support their interpretations. 
+   SEBI allows the representation and reasoning about such information. In particular, the ontology
+   is provided with a set of Named Individuals which characterise the use of the ontology to represent the evidences which support scholalry interpretations about the classification
+   of a document's authenticity (in particular by defining such document an Authentic document, a Forgery or a Suspected Forgery). 
+
+   The following figure shows classes (yellow rectangles), object properties (blue solid lines beginning with a solid circle and ending with a solid arrow), data properties (green solid lines beginning with a outline circle and ending with an outline arrow), subclass relationships assertions among classes (black solid lines ending with a solid arrow)
+   and named individuals (pink solid circles). 
+</div>
+
+<img src="resources/sebi_diagram.png" width="50%" style="display: block; margin-left: auto; margin-right: auto;">
+
+<div>
+
+   SEBI main classes tackle the following aspects:
+
+   <ul>
+      <li><code>sebi:Evidence</code> represents a scholars' observation of an evidence collected to support a certain interpretation</li>
+      <li><code>sebi:Feature</code> representes the feature of the cultural object on which the evidence is collected on (e.g. the style, the material support)</li>
+      <li><code>sebi:Evaluation</code> models the evaluation given to a feature during the collection of evidences (e.g. presence, veridicality)</li>
+      <br>
+      <li><b>Negation handeling</b>. Evidences may convey negative meanings (e.g. the style is inconsistent, the seal is absent). SEBI models negation or absence with the use of a data property (<code>sebi:hasEvaluationScore</code>) 
+         which indicates the positiness or negativeness of the collected evidence. The lower the value of the evaluation score, the lower the degree of positivity of the evidence (e.g. the coherency 
+         of the style is 0 means that the style is incoherent). </li>
+      <li><b>Named individuals</b>. A set of named individuals has been included in the SEBI ontology to model the domain of document authenticity assessment. However, such named entities can be customised depending on the scope of the Knowledge Graph. </li>
+   </ul>
+
+
+   For instance, the document "Donation of constantine" has been judged by Lorenzo Valla as a forgery. Bibliographic references support the claim as well a set of evidences such as "incoherent style and language". Such a scenario can be represented as follows (in turtle syntax):
+
+   <pre>
+   :donation-valla-opinion a hico:InterpretationAct .
+
+   :donation-valla-evidence1 a sebi:Evidence ;
+      sebi:support :donation-valla-opinion ;
+      sebi:account sebi:style ;
+      sebi:evaluate sebi:coherency ;
+      sebi:hasEvaluationScore "0"^^xsd:integer .
+
+   :donation-valla-evidence1 a sebi:Evidence ;
+      sebi:support :donation-valla-opinion ;
+      sebi:account sebi:language ;
+      sebi:evaluate sebi:coherency ;
+      sebi:hasEvaluationScore "0"^^xsd:integer .
+   </pre>
+   
+</div>
+
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
